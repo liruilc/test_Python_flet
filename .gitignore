@@ -1,0 +1,199 @@
+# 字节编译/优化/DLL 文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C 扩展
+*.so
+
+# 配送/包装
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Py安装程序
+#  通常这些文件是由模板中的 Python 脚本编写的
+#  在 PyInstaller 构建 exe 之前，以便将日期/其他信息注入其中。
+*.manifest
+*.spec
+
+# 安装程序日志
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 单元测试/覆盖率报告
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# 忽略翻译相关的文件
+*.mo
+*.pot
+
+# Django 的东西:Django 是一个 Python Web 框架，用于快速开发 Web 网站、后台管理系统、API 等
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# 烧瓶的东西:
+instance/
+.webassets-cache
+
+# Scrapy stuff:Scrapy 的东西Scrapy 是一个 Python 爬虫框架，用于快速 抓取网站数据（爬虫） 和 进行数据解析
+.scrapy
+
+# Sphinx documentation Sphinx 文档 Sphinx 是一个 Python 文档生成工具，用于自动化生成 HTML、PDF、LaTeX 等格式的项目文档
+docs/_build/
+
+# PyBuilder
+# PyBuilder 是一个用于 Python 项目的构建自动化工具。类似于 Maven（Java）或 Gradle，
+# 它帮助你管理项目的构建过程、依赖、测试、打包等。PyBuilder 专注于简化 Python 项目的构建和维护
+.pybuilder/
+target/
+
+# Jupyter Notebook
+# Jupyter Notebook 是一个开源的 Web 应用程序，广泛用于创建和分享文档，这些文档包含了实时代码、方程式、
+# 可视化以及文本说明。它特别适合于数据科学、机器学习和科学计算等领域。Jupyter Notebook 可以支持多种编程语言，但最常用的语言是 Python
+.ipynb_checkpoints
+
+# IPython
+# IPython 是一个交互式 Python shell，它为 Python 提供了一个更强大的交互式环境，
+# 比标准的 Python shell 提供了更多的功能。IPython 不仅可以用来执行代码，还能增强 Python 编程的体验，支持更丰富的功能和交互操作
+profile_default/
+ipython_config.py
+
+# pyenv
+#   对于库或包，您可能希望忽略这些文件，因为代码是
+#   旨在在多个环境中运行；否则，请将其签入：
+.python-version
+
+# pipenv
+#   根据 pypa/pipenv#598，建议将 Pipfile.lock 纳入版本控制。
+#   但是，在协作的情况下，如果具有平台特定的依赖关系或依赖关系
+#   由于没有跨平台支持，pipenv 可能会安装不起作用的依赖项，或者不
+#   安装所有需要的依赖项。
+Pipfile.lock
+
+# UV
+#   与Pipfile.lock类似，一般建议将uv.lock纳入版本控制中。
+#   特别推荐用于二进制包以确保可重复性，并且更
+#   通常被图书馆所忽视。
+# uv.lock
+
+# poetry
+#   与Pipfile.lock类似，一般建议将poetry.lock纳入版本控制中。
+#   特别推荐用于二进制包以确保可重复性，并且更
+#   通常被图书馆所忽视。
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+# poetry.lock
+
+# pdm
+#   与Pipfile.lock类似，一般建议将pdm.lock纳入版本控制中。
+# pdm.lock
+#   pdm 将项目范围的配置存储在 .pdm.toml 中，但建议不包括它
+#   在版本控制中。
+#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
+.pdm.toml
+.pdm-python
+.pdm-build/
+
+# PEP 582；例如由 github.com/David-OConnor/pyflow 和 github.com/pdm-project/pdm 使用
+__pypackages__/
+
+# Celery stuff
+# Celery 是一个非常流行的异步任务队列/作业队列框架，专门用于处理和调度任务，
+# 尤其适用于 Python 应用程序中的并行任务执行。它通常被用来处理长时间运行的任务、
+# 定时任务、后台任务等，常见于 Web 开发（如 Django、Flask）中，来实现高效的任务调度和异步处理
+# celerybeat-schedule
+# celerybeat.pid
+
+# SageMath parsed files SageMath 解析文件
+# SageMath 是一个开源的数学软件系统，它集成了多种数学工具和库，支持各种数学计算，如代数、
+# 数论、几何、微积分、线性代数等。SageMath 提供了一个非常强大的计算环境，可以通过 Python 编程语言进行交互式计算
+*.sage.py
+
+# Environments 环境
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings  Spyder 项目设置
+# Spyder 是一个流行的 Python 集成开发环境（IDE），特别适用于科学计算和数据分析工作。它提供了许多强大的工具来帮助开发者编写、
+# 调试和执行代码，包括编辑器、控制台、文件浏览器、变量查看器等。Spyder 项目设置（Project Settings）让用户可以管理项目的配置文件、
+# Python 环境、库依赖等
+.spyderproject
+.spyproject
+
+# Rope project settings 绳索项目设置
+# Rope 是一个用于 Python 的重构工具，专门帮助开发者进行代码重构、自动化修复、移动模块等操作。
+# Rope 项目设置通常涉及如何在项目中配置和管理它的功能，如代码重构、自动完成、文件组织等
+.ropeproject
+
+# mkdocs documentation
+# MkDocs 是一个用 Python 编写的静态站点生成工具，专门用于创建 项目文档。它的目标是帮助开发者和团队快速生成漂亮、
+# 响应式的文档网站。MkDocs 的特别之处在于它允许你通过简单的 Markdown 文件来构建整个文档网站，并且它支持多种插件和主题，以提供丰富的自定义选项
+/site
+
+# mypy
+# Mypy 是一个 Python 类型检查器，用于检查 Python 代码中的类型提示（type hints）。它是一种静态类型检查工具，能够帮助开发者在开发过程中检测类型错误，
+# 从而提高代码的质量和可维护性。Mypy 不会影响 Python 的运行时，它只会在编译时进行类型检查，确保类型的正确性
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker 火堆类型检查器
+# Pyre 是一个高效的 静态类型检查器，专门为 Python 设计，用于帮助开发者静态地检查代码中的类型错误。
+# 它由 Facebook 开发，旨在提供快速的类型检查工具，支持大型代码库的高效分析
+.pyre/
+
+# pytype static type analyzer
+# Pytype 是一个静态类型分析工具，专为 Python 设计，用于静态检查代码中的类型错误。
+# 它是由 Google 开发的，能够根据代码中的类型注解（Type Hints）和类型推断，帮助开发者发现潜在的类型错误。
+# Pytype 结合了类型推断和类型注解支持，旨在提高 Python 代码的类型安全性
+.pytype/
+
+# Cython debug symbols
+# Cython debug symbols 是 Cython 编译时生成的调试信息，它们可以帮助开发者在使用 Cython 扩展时更好地进行调试。
+# Cython 是一个非常强大的工具，它使得 Python 代码可以通过与 C 语言相结合进行加速，但这也可能导致一些调试问题，因为生成的 C 代码和 Python 的运行时环境不同。
+# 通过启用 Cython 的调试符号，你可以获得更多的调试信息，帮助你更容易地追踪和解决 Cython 扩展中的问题
+cython_debug/
+
+# PyCharm
+#  JetBrains 特定模板在单独的 JetBrains.gitignore 中维护，可以
+#  位于 https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  并可以添加到全局 gitignore 或合并到此文件中。对于更核心的
+#  选项（不推荐）您可以取消注释以下内容以忽略整个想法文件夹。
+#.idea/
+
+# PyPI configuration file PyPI 配置文件
+.pypirc
