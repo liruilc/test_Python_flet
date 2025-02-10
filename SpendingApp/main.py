@@ -15,12 +15,12 @@ class SpendingApp(ft.Container):
             content=ft.Row(
            alignment=ft.MainAxisAlignment.SPACE_AROUND,
             controls=[
-                    ft.IconButton(icon=ft.icons.ARROW_BACK_IOS, icon_color="white"),
+                    ft.IconButton(icon=ft.Icons.ARROW_BACK_IOS, icon_color="white"),
                     ft.Dropdown(
                         width=150,
                         hint_text="Este mes",
                         border_color= self.container2_color,
-                        suffix_icon= ft.icons.KEYBOARD_ARROW_DOWN,
+                        suffix_icon= ft.Icons.KEYBOARD_ARROW_DOWN,
                         bgcolor = self.bg_color,
                         border_radius=10,                
                         icon_enabled_color="transparent",
@@ -36,7 +36,7 @@ class SpendingApp(ft.Container):
         )
         self.title = ft.Container(
             height=20, padding=0,
-            content=ft.Text("2 de enero, 2025 al 15 de enero 2025.", color=ft.colors.with_opacity(0.5, "white"))
+            content=ft.Text("2 de enero, 2025 al 15 de enero 2025.", color=ft.Colors.with_opacity(0.5, "white"))
             )
         
         self.row_1 = ft.Container(
@@ -103,25 +103,25 @@ class SpendingApp(ft.Container):
             data_series=[
                 ft.LineChartData(
                     data_points=[ft.LineChartDataPoint(x, y, selected=(x == 8)) for x, y in zip(x_values, green_line)],
-                    color=ft.colors.GREEN,
+                    color=ft.Colors.GREEN,
                     stroke_width=1,
                     curved=True,
-                    below_line_bgcolor=ft.colors.with_opacity(0.2, ft.colors.GREEN),
+                    below_line_bgcolor=ft.Colors.with_opacity(0.2, ft.Colors.GREEN),
                 ),
                 ft.LineChartData(
                     data_points=[ft.LineChartDataPoint(x, y, selected=(x == 8)) for x, y in zip(x_values, red_line)],
-                    color=ft.colors.RED,
+                    color=ft.Colors.RED,
                     stroke_width=1,
                     curved=True,
-                    below_line_bgcolor=ft.colors.with_opacity(0.2, ft.colors.RED),
+                    below_line_bgcolor=ft.Colors.with_opacity(0.2, ft.Colors.RED),
                 )
             ],
             min_y=0,
             max_y=10,
             expand=True,
             border=ft.Border(
-                bottom=ft.BorderSide(1, ft.colors.with_opacity(0.3, ft.colors.WHITE)),
-                left=ft.BorderSide(1, ft.colors.with_opacity(0.3, ft.colors.WHITE))
+                bottom=ft.BorderSide(1, ft.Colors.with_opacity(0.3, ft.Colors.WHITE)),
+                left=ft.BorderSide(1, ft.Colors.with_opacity(0.3, ft.Colors.WHITE))
             ),
             bottom_axis=bottom_axis,
             left_axis=left_axis,
@@ -182,9 +182,9 @@ class SpendingApp(ft.Container):
                     ft.Row(
                         alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                         controls=[
-                            ft.IconButton(icon=ft.icons.DIRECTIONS_CAR_FILLED_OUTLINED, icon_color="white"),
+                            ft.IconButton(icon=ft.Icons.DIRECTIONS_CAR_FILLED_OUTLINED, icon_color="white"),
                             ft.Text("Viajes y Transporte", color=self.container2_color),
-                            ft.IconButton(icon=ft.icons.EDIT_CALENDAR, icon_color="white"),
+                            ft.IconButton(icon=ft.Icons.EDIT_CALENDAR, icon_color="white"),
                         ]
                     ),
                     ft.Column(
@@ -228,9 +228,9 @@ class SpendingApp(ft.Container):
                     ft.Row(
                         alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                         controls=[
-                            ft.IconButton(icon=ft.icons.HOME_OUTLINED, icon_color="white"),
+                            ft.IconButton(icon=ft.Icons.HOME_OUTLINED, icon_color="white"),
                             ft.Text("Casa", color=self.container2_color),
-                            ft.IconButton(icon=ft.icons.EDIT_CALENDAR, icon_color="white"),
+                            ft.IconButton(icon=ft.Icons.EDIT_CALENDAR, icon_color="white"),
                         ]
                     ),
                     ft.Column(
@@ -278,7 +278,7 @@ class SpendingApp(ft.Container):
                                 color=self.blue_color)
                         ]
                     ),
-                    ft.IconButton(icon=ft.icons.POWER_SETTINGS_NEW, bgcolor="transparent",
+                    ft.IconButton(icon=ft.Icons.POWER_SETTINGS_NEW, bgcolor="transparent",
                                 style = ft.ButtonStyle(side = ft.BorderSide(1, self.container2_color),
                                         shape=ft.RoundedRectangleBorder(radius=10)                                 
                                 )

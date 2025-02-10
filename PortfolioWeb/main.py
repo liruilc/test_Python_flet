@@ -165,4 +165,5 @@ class PortafolioWeb(ft.Container):
 
         self.page.update()
 
-ft.app(target=lambda page: PortafolioWeb(page), view= ft.WEB_BROWSER, assets_dir="assets")
+#ft.app(target=lambda page: PortafolioWeb(page), view= ft.WEB_BROWSER, assets_dir="assets")
+ft.app(target=lambda page: PortafolioWeb(page), assets_dir="assets")
