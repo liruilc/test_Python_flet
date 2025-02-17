@@ -1,19 +1,19 @@
 
 
 import flet as ft 
-def main(page:ft.Page):
-    page.window_height=460
-    page.window_width = 300
-    page.bgcolor = ft.colors.BLACK
-    page.window_resizable = False
-    page.window_maximizable = False
+def main(page:ft.Page):  # sourcery skip: use-fstring-for-concatenation
+    page.window_height=460 # type: ignore
+    page.window_width = 300# type: ignore
+    page.bgcolor = ft.colors.BLACK# type: ignore
+    page.window_resizable = False# type: ignore
+    page.window_maximizable = False# type: ignore
     page.title = "Calculator"
 
     def get_data(e):
         data = e.control.data
         if data == "=":
             try:
-                text.value = str(eval(text.value))
+                text.value = str(eval(text.value))# type: ignore
             except Exception as e:
                 text.value = "ERROR"
         elif data == "C":
@@ -22,19 +22,19 @@ def main(page:ft.Page):
             text.value = text.value[:-1] if text.value else text.value
         elif data == "%":
             try:
-                text.value = str(float(text.value) / 100)
+                text.value = str(float(text.value) / 100)# type: ignore
             except ValueError:
                 text.value = "ERROR"
         elif data == ".":
             if not text.value or text.value[-1] not in [".", "+", "-", "/", "*"]:
-                text.value += data
+                text.value += data# type: ignore
         elif data == "±":
-            text.value = "-" + text.value if text.value and text.value[0] != "-" else text.value[1:]
+            text.value = "-" + text.value if text.value and text.value[0] != "-" else text.value[1:] # type: ignore
         elif data in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "/", "*"]:
-            text.value += data
+            text.value += data# type: ignore
         page.update()
 
-    text = ft.TextField(read_only=True, border_color=ft.colors.BLACK,text_align="right",
+    text = ft.TextField(read_only=True, border_color=ft.colors.BLACK,text_align="right",# type: ignore
                         text_style=ft.TextStyle(size=30, color ="white"))
     
     page.add(text)

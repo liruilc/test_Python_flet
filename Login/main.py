@@ -18,15 +18,15 @@ body =  ft.Container(
                             'Iniciar Sesión',
                             width=360,
                             size=30,
-                            weight ='w900',
-                            text_align = 'center'
+                            weight ='w900',# type: ignore
+                            text_align = 'center'# type: ignore
                             ),
                         ft.Container(
                             ft.TextField(
                                 width=280,
                                 height=40,
                                 hint_text= 'Correo electronico',
-                                border ='underline',
+                                border ='underline',# type: ignore
                                 color ='black',
                                 prefix_icon = ft.icons.EMAIL,
                                 ),
@@ -37,7 +37,7 @@ body =  ft.Container(
                                 width=280,
                                 height=40,
                                 hint_text= 'Contraseña',
-                                border ='underline',
+                                border ='underline',# type: ignore
                                 color ='black',
                                 prefix_icon = ft.icons.LOCK,
                                 password = True,
@@ -56,7 +56,7 @@ body =  ft.Container(
                                 content = ft.Text(
                                     'INICIAR',
                                     color = 'white',
-                                    weight ='w500',
+                                    weight ='w500',# type: ignore
                                     ),
                                 width =280,
                                 bgcolor = 'black',
@@ -89,11 +89,11 @@ body =  ft.Container(
         )
 
 def main(page:ft.Page):
-    page.window_width =800
-    page.window_height = 520
+    page.window_width =800# type: ignore
+    page.window_height = 520# type: ignore
     page.padding = 0
-    page.vertical_alignment = "center"
-    page.horizontal_alignment = "center"
+    page.vertical_alignment = "center"# type: ignore
+    page.horizontal_alignment = "center"# type: ignore
     #page.window_bgcolor = ft.colors.TRANSPARENT
     #page.window_title_bar_buttons_hidden = True
     #page.window_frameless = True

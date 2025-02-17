@@ -60,7 +60,7 @@ class SpendingApp(ft.Container):
                             )
                         ]
                     ),
-                    ft.Text("$ 74,900", size=25, weight="bold"),
+                    ft.Text("$ 74,900", size=25, weight="bold"),# type: ignore
                     ]
                     )
                 ),
@@ -83,7 +83,7 @@ class SpendingApp(ft.Container):
                             )
                         ]
                     ),
-                    ft.Text("$ 24,845", size=25, weight="bold"),
+                    ft.Text("$ 24,845", size=25, weight="bold"),# type: ignore
                     ]
                     )
                 )
@@ -137,7 +137,7 @@ class SpendingApp(ft.Container):
                                 alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                                 controls=[
                                     ft.Text("Diferencia"),
-                                    ft.Text("$ 18,290", size=15, weight="bold"),
+                                    ft.Text("$ 18,290", size=15, weight="bold"),# type: ignore
                                 ]
                             ),
                             # grafica
@@ -273,7 +273,7 @@ class SpendingApp(ft.Container):
                 controls=[
                     ft.Column(
                         controls=[
-                            ft.Text("Total gastado $7,800", color=self.container2_color, weight="bold",size=15),
+                            ft.Text("Total gastado $7,800", color=self.container2_color, weight="bold",size=15),# type: ignore
                             ft.ProgressBar(value=0.45, bgcolor=self.container2_color, border_radius=5, height=10, width=150,
                                 color=self.blue_color)
                         ]
@@ -289,7 +289,7 @@ class SpendingApp(ft.Container):
 
 
         self.page.add(ft.Column(
-            expand=True, scroll="auto",
+            expand=True, scroll="auto",# type: ignore
             controls=[
                     self.header,
                     self.title,

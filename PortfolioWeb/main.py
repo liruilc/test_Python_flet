@@ -120,33 +120,33 @@ class PortafolioWeb(ft.Container):
             ]
         )
 
-        self.page.add(self.content)
+        self.page.add(self.content)# type: ignore
     
     def cambiar_pagina(self, e):
-        self.frame_inicio.offset.x = -2
-        self.frame_servicio.offset.x = -2 
-        self.frame_resumen.offset.x = -2
-        self.frame_contacto.offset.x = -2 
+        self.frame_inicio.offset.x = -2# type: ignore
+        self.frame_servicio.offset.x = -2 # type: ignore
+        self.frame_resumen.offset.x = -2# type: ignore
+        self.frame_contacto.offset.x = -2 # type: ignore
 
         if e==0:
-            self.frame_inicio.offset.x = 0
+            self.frame_inicio.offset.x = 0# type: ignore
         if e==1:
-            self.frame_servicio.offset.x = 0
+            self.frame_servicio.offset.x = 0# type: ignore
         if e==2:
-            self.frame_resumen.offset.x = 0
+            self.frame_resumen.offset.x = 0# type: ignore
         if e==3:
-            self.frame_contacto.offset.x = 0
+            self.frame_contacto.offset.x = 0# type: ignore
 
-        self.page.update()
+        self.page.update()# type: ignore
 
     def cambiar_modo_oscuro(self, e):
         if e.control.icon =="dark_mode":
             self.cambiar_modo.icon = ft.icons.LIGHT_MODE
-            self.page.theme_mode = "light"
+            self.page.theme_mode = "light"# type: ignore
         else:
             self.cambiar_modo.icon = ft.icons.DARK_MODE
-            self.page.theme_mode = "dark"   
-        self.page.update()        
+            self.page.theme_mode = "dark"   # type: ignore
+        self.page.update()        # type: ignore
 
     def cambiar_pagina_resumen(self, e):
         self.frame_experiencia.visible = False
@@ -163,7 +163,7 @@ class PortafolioWeb(ft.Container):
             self.frame_habilidades.visible = True
             self.titulo_resumen.value = "Mis Habilidades"
 
-        self.page.update()
+        self.page.update()# type: ignore
 
 #ft.app(target=lambda page: PortafolioWeb(page), view= ft.WEB_BROWSER, assets_dir="assets")
 ft.app(target=lambda page: PortafolioWeb(page), assets_dir="assets")

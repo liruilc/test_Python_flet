@@ -58,17 +58,17 @@ class CameraApp(ft.Column):  # ✅ 使用 Column 代替 UserControl
             ret, frame = self.capture.read()
             if ret:
                 _, buffer = cv2.imencode(".png", frame)
-                self.frame = base64.b64encode(buffer).decode("utf-8")
+                self.frame = base64.b64encode(buffer).decode("utf-8")# type: ignore
                 self.video1.src_base64 = self.frame
                 self.video2.src_base64 = self.frame
-                self.page.update()  # ✅ 确保 UI 刷新
+                self.page.update()  # ✅ 确保 UI 刷新# type: ignore
             else:
                 print("⚠️ 错误: 读取摄像头失败")
             time.sleep(0.03)
 
     def window_event(self, e):
         if e.data == "close":
-            self.page.overlay.append(ft.AlertDialog(
+            self.page.overlay.append(ft.AlertDialog(# type: ignore
                 modal=True,
                 title=ft.Text("请确认"),
                 content=ft.Text("是否关闭应用？"),
@@ -77,17 +77,17 @@ class CameraApp(ft.Column):  # ✅ 使用 Column 代替 UserControl
                     ft.OutlinedButton("否", on_click=self.no_click),
                 ],
             ))
-            self.page.update()
+            self.page.update()# type: ignore
 
     def yes_click(self, e):
         self.thread_running = False
         if self.threading.is_alive():
             self.threading.join()
         self.capture.release()
-        self.page.window_close()
+        self.page.window_close()# type: ignore
 
     def no_click(self, e):
-        self.page.update()
+        self.page.update()# type: ignore
 
 # 启动 Flet 应用
 ft.app(target=lambda page: page.add(CameraApp(page)))  # ✅ 正确添加组件

@@ -7,7 +7,7 @@ import time
 import threading 
 
 
-class MyApp(ft.UserControl):
+class MyApp(ft.Container):
     def __init__(self, page):
         super().__init__(expand=True)
         self.page = page
@@ -139,7 +139,7 @@ class MyApp(ft.UserControl):
                                                  color = "black",
                                                  font_family="vivaldi",
                                                  size=30,
-                                                 weight="bold")
+                                                 weight="bold")# type: ignore
                             ),
                         
                         ft.Container(

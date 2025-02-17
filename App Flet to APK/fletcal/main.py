@@ -24,18 +24,21 @@ class CustomButton(ft.Container):
                 blur_style = ft.ShadowBlurStyle.NORMAL,
             ),
         ]
-        self.content = ft.Text(value=text, color="black", size=20, weight="bold")
+        self.content = ft.Text(value=text, color="black", size=20, weight=ft.FontWeight.BOLD)
         self.alignment = ft.alignment.center
         self.on_click = on_click
         
-def main(page:ft.Page):
+def main(page:ft.Page):  # sourcery skip: assign-if-exp, use-fstring-for-concatenation
     page.bgcolor = "#21bb8e"
 
     def get_data(e):
         data = e.control.data
         if data == "=":
             try:
-                text.value = str(eval(text.value))
+                if text.value:
+                    text.value = str(eval(text.value))
+                else:
+                    text.value = "ERROR"
             except Exception as e:
                 text.value = "ERROR"
         elif data == "C":
@@ -44,19 +47,19 @@ def main(page:ft.Page):
             text.value = text.value[:-1] if text.value else text.value
         elif data == "%":
             try:
-                text.value = str(float(text.value) / 100)
+                text.value = str(float(text.value) / 100) # type: ignore
             except ValueError:
                 text.value = "ERROR"
         elif data == ".":
             if not text.value or text.value[-1] not in [".", "+", "-", "/", "*"]:
-                text.value += data
+                text.value += data # type: ignore
         elif data == "±":
-            text.value = "-" + text.value if text.value and text.value[0] != "-" else text.value[1:]
+            text.value = "-" + text.value if text.value and text.value[0] != "-" else text.value[1:] # type: ignore
         elif data in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "/", "*"]:
-            text.value += data
+            text.value += data # type: ignore
         page.update()
 
-    text = ft.TextField(read_only=True, border_color="#21bb8e",text_align="right",
+    text = ft.TextField(read_only=True, border_color="#21bb8e",text_align="right", # type: ignore
                         text_style=ft.TextStyle(size=30, color ="black"))
     
     butons = ft.Column(
@@ -131,7 +134,7 @@ def main(page:ft.Page):
         content=ft.Column(
             expand=True,
             horizontal_alignment= ft.CrossAxisAlignment.CENTER,
-            alignment= ft.alignment.center,
+            alignment= ft.alignment.center, # type: ignore
             controls=[
             text,
             butons,

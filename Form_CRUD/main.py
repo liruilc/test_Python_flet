@@ -15,6 +15,7 @@ class PDF(FPDF):
         self.cell(0, 10, f'Página {self.page_no()}', 0, 0, 'C')
 
 def create_form(page: ft.Page):
+    # sourcery skip: assign-if-exp, boolean-if-exp-identity, remove-unnecessary-cast
     data_manager = ContactManager()
     selected_row = None
 
@@ -143,7 +144,7 @@ def create_form(page: ft.Page):
             print("先选择一行")
 
     def search_data(e):
-        search = search_field.value.lower()
+        search = search_field.value.lower()# type: ignore
         filtered_data = [x for x in data_manager.get_contacts() 
                         if search in x[1].lower()]
         data_table.rows = []
@@ -208,7 +209,7 @@ def create_form(page: ft.Page):
                 ft.Text(
                     "输入您的详细信息",
                     size=40,
-                    text_align="center",
+                    text_align="center",# type: ignore
                     color="white",
                     font_family="Segoe Script",
                     weight=ft.FontWeight.BOLD,
@@ -239,7 +240,7 @@ def create_form(page: ft.Page):
                                         color=ft.colors.WHITE,
                                         bgcolor=ft.colors.PURPLE,
                                         animation_duration=300,
-                                        overlay_color={"hovered": ft.colors.PURPLE_200},
+                                        overlay_color={"hovered": ft.colors.PURPLE_200},# type: ignore
                                         side=ft.BorderSide(1, ft.colors.PURPLE_300),
                                         shape=ft.RoundedRectangleBorder(radius=8),
                                     ),
@@ -263,7 +264,7 @@ def create_form(page: ft.Page):
                                         color=ft.colors.WHITE,
                                         bgcolor=ft.colors.PURPLE,
                                         animation_duration=300,
-                                        overlay_color={"hovered": ft.colors.PURPLE_200},
+                                        overlay_color={"hovered": ft.colors.PURPLE_200},# type: ignore
                                         side=ft.BorderSide(1, ft.colors.PURPLE_300),
                                         shape=ft.RoundedRectangleBorder(radius=8),
                                     ),
@@ -287,7 +288,7 @@ def create_form(page: ft.Page):
                                         color=ft.colors.WHITE,
                                         bgcolor=ft.colors.PURPLE,
                                         animation_duration=300,
-                                        overlay_color={"hovered": ft.colors.PURPLE_200},
+                                        overlay_color={"hovered": ft.colors.PURPLE_200},# type: ignore
                                         side=ft.BorderSide(1, ft.colors.PURPLE_300),
                                         shape=ft.RoundedRectangleBorder(radius=8),
                                     ),
@@ -354,7 +355,7 @@ def create_form(page: ft.Page):
                 ),
                 ft.Column(
                     expand=True,
-                    scroll="auto",
+                    scroll="auto",# type: ignore
                     controls=[
                         ft.ResponsiveRow([data_table])
                     ]
@@ -383,14 +384,14 @@ def create_action_button(text, icon, on_click):
             bgcolor="purple",
             animation_duration=300,  # 添加动画效果
             side={  # 添加边框效果
-                ft.MaterialState.DEFAULT: ft.BorderSide(1, "purple300"),
-                ft.MaterialState.HOVERED: ft.BorderSide(2, "purple100"),
+                ft.MaterialState.DEFAULT: ft.BorderSide(1, "purple300"),# type: ignore
+                ft.MaterialState.HOVERED: ft.BorderSide(2, "purple100"),# type: ignore
             },
             shape={  # 圆角形状
-                ft.MaterialState.DEFAULT: ft.RoundedRectangleBorder(radius=8),
-                ft.MaterialState.HOVERED: ft.RoundedRectangleBorder(radius=12),
+                ft.MaterialState.DEFAULT: ft.RoundedRectangleBorder(radius=8),# type: ignore
+                ft.MaterialState.HOVERED: ft.RoundedRectangleBorder(radius=12),# type: ignore
             },
-            shadow=ft.BoxShadow(  # 添加阴影
+            shadow=ft.BoxShadow(  # 添加阴影# type: ignore
                 spread_radius=1,
                 blur_radius=4,
                 color=ft.colors.with_opacity(0.3, "purple"),
