@@ -122,7 +122,7 @@ class PortafolioWeb(ft.Container):
 
         self.page.add(self.content)# type: ignore
     
-    def cambiar_pagina(self, e):
+    def cambiar_pagina(self, e):  # sourcery skip: switch
         self.frame_inicio.offset.x = -2# type: ignore
         self.frame_servicio.offset.x = -2 # type: ignore
         self.frame_resumen.offset.x = -2# type: ignore
