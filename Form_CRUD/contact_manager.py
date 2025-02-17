@@ -24,6 +24,7 @@ class ContactManager:
         self.connection.commit()
 
     def get_contacts(self):
+        # sourcery skip: inline-immediately-returned-variable
         cursor = self.connection.cursor()
         query = "SELECT * FROM datos"
         cursor.execute(query)
